@@ -327,31 +327,36 @@ img {
   font-weight: 400;
   font-size: 14px;
   line-height: 1.71;
+  margin-bottom: 16px;
 }
 /* Иконки */
 .social-links {
   display: flex;
+  justify-content: center;
   padding: 0;
   margin: 0;
-  outline: 1px solid black;
+  /* outline: 1px solid black;  */
   list-style: none;
+  gap: 10px;
 }
 
 .social-link {
   display: flex;
   justify-content: center;
   align-items: center;
+
   padding: 0;
   border: none;
   width: 44px;
   height: 44px;
-  color: #212121;
+  color: #afb1b8;
   border-radius: 50%;
-  background-color: teal;
 }
 
-.social-link:hover {
-  color: #2196f3;
+.social-link:hover,
+.social-link:focus {
+  color: #ffffff;
+  background-color: #2196f3;
 }
 
 .social-icon {
