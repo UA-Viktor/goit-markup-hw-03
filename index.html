@@ -24,10 +24,10 @@
             <div class="header-main">
                 <!-- Навигация на другие страницы -->
                 <nav class="header-nav">
-                    <a href="index.html" class="logo link"><span>Web</span>Studio</a>
+                    <a href="index.html" class="logo"><span>Web</span>Studio</a>
 
                     <ul class="site-nav">
-                        <li><a href="index.html" class="link current">Студія</a></li>
+                        <li class="menu-line"><a href="index.html" class="link current">Студія</a></li>
                         <li><a href="portfolio.html" class="link">Портфоліо</a></li>
                         <li><a href="contacts.html" class="link">Контакти</a></li>
                     </ul>
@@ -80,29 +80,51 @@
             <div class="container">
 
                 <ul class="special-list">
-
-                    <li class="special-card icon-antenna">
+                    <li>
+                        <div class="special-card-svg">
+                            <svg width="70" height="70">
+                                <use href="./images/symbol-defs.svg#icon-antenna">
+                                </use>
+                            </svg>
+                        </div>
                         <h3 class="special-list-item">УВАГА ДО ДЕТАЛЕЙ</h3>
                         <p class="special-list-text">Ідейні міркування, і навіть початок повсякденної роботи з
                             формування
                             позиції.</p>
                     </li>
-                    <li class="special-card icon-clock">
+                    <li>
+                        <div class="special-card-svg">
+                            <svg width="70" height="70">
+                                <use href="./images/symbol-defs.svg#icon-clock">
+                                </use>
+                            </svg>
+                        </div>
                         <h3 class="special-list-item">ПУНКТУАЛЬНІСТЬ</h3>
                         <p class="special-list-text">Завдання організації, особливо рамки і місце навчання кадрів тягне
                             у
                             себе.</p>
                     </li>
-                    <li class="special-card icon-diagram">
+                    <li>
+                        <div class="special-card-svg">
+                            <svg width="70" height="70">
+                                <use href="./images/symbol-defs.svg#icon-diagram">
+                                </use>
+                            </svg>
+                        </div>
                         <h3 class="special-list-item">ПЛАНУВАННЯ</h3>
                         <p class="special-list-text">Так само консультація з широким активом значною мірою зумовлює.</p>
                     </li>
-                    <li class="special-card icon-astronaut">
+                    <li>
+                        <div class="special-card-svg">
+                            <svg width="70" height="70">
+                                <use href="./images/symbol-defs.svg#icon-astronaut">
+                                </use>
+                            </svg>
+                        </div>
                         <h3 class="special-list-item">СУЧАСНІ ТЕХНОЛОГІЇ</h3>
                         <p class="special-list-text">Значимість цих проблем настільки очевидна, що реалізація планових
                             завдань.</p>
                     </li>
-
                 </ul>
 
             </div>
@@ -118,12 +140,15 @@
                 <ul class="work-list">
                     <li class="work-card">
                         <img src="./images/box1.jpg" alt="box1" width="370" />
+                        <p class="label">Десктопні додатки</p>
                     </li>
                     <li class="work-card">
                         <img src="./images/box2.jpg" alt="box2" width="370" />
+                        <p class="label">Мобільні додатки</p>
                     </li>
                     <li class="work-card">
                         <img src="./images/box3.jpg" alt="box3" width="370" />
+                        <p class="label">Дизайнерські рішення</p>
                     </li>
                 </ul>
 
@@ -451,6 +476,12 @@
             </div>
         </div>
     </footer>
+
+
+
+
+    <!-- Ставим перед закрывающим тегом body -->
+    <script src="./js/modal.js"></script>
 
 </body>
 
