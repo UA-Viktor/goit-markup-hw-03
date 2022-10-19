@@ -68,11 +68,22 @@
                 <div class="container">
                     <div class="hero-container">
                         <h1 class="hero-title">Ефективні рішення для <br />вашого бізнесу</h1>
-                        <button type="button" class="button">Замовити послугу</button>
+                        <button data-modal-open type="button" class="button">Замовити послугу</button>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Модальное окно -->
+
+        <div class="backdrop is-hidden" data-modal>
+            <div class="modal">
+                <h3>Залиште свої дані, ми вам передзвонимо</h3>
+                <p>Test</p>
+                <button data-modal-close>Close</button>
+            </div>
+        </div>
+
 
 
         <!-- Особливості -->
@@ -481,7 +492,15 @@
 
 
     <!-- Ставим перед закрывающим тегом body -->
-    <script src="./js/modal.js"></script>
+    <script src="./modal.js"></script>
+
+    <script>
+        const { height: pageHeaderHeight } = document
+            .querySelector(".header")
+            .getBoundingClientRect();
+
+        document.body.style.paddingTop = `${pageHeaderHeight}px`;
+    </script>
 
 </body>
 

@@ -8,6 +8,7 @@
   --bg-color-secondary: #f5f4fa;
   --bg-color-head-footer: #2f303a;
   --bg-color-portfolio: #ffffff;
+  --header-h: 80px;
 }
 
 body {
@@ -16,6 +17,7 @@ body {
   font-family: "Roboto", sans-serif;
   letter-spacing: 0.03em;
   line-height: 1.5;
+  padding-top: var(--header-h);
 }
 
 h1,
@@ -55,8 +57,13 @@ img {
 
 .header {
   border-bottom: 1px solid #ececec;
-  /* position: fixed;
-  width: 100%; */
+  background-color: var(--bg-color-portfolio);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  min-height: var(--header-h);
+  z-index: 1;
 }
 
 .header-main {
@@ -72,7 +79,6 @@ img {
 
 .logo {
   display: inline-block;
-
   color: #000000;
   font-family: "Raleway", sans-serif;
   font-size: 26px;
@@ -98,7 +104,7 @@ img {
   margin-left: 93px;
 }
 .link {
-  padding: 32px 0;
+  padding: 31px 0;
   display: flex;
   align-items: center;
 
@@ -110,12 +116,23 @@ img {
   padding: 32px 0;
   color: var(--text-color-primary);
   text-decoration: none; /* Убираем подчеркивание в ссылках */
+
+  /* Анимирование */
+
+  /* transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: linear; */
+  /* transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); */
+
+  /* Можно вверхниии три строчки записать вот так */
+  transition: color 250ms linear;
 }
 
 /* Contacts nav */
 
 .contact-nav {
   display: inline-flex;
+  gap: 50px;
 }
 .contact-nav .link {
   color: var(--text-color-secondary);
@@ -132,25 +149,6 @@ img {
   fill: currentColor;
 }
 
-.menu-line {
-  position: relative;
-  display: block;
-  text-decoration: none;
-}
-
-.menu-line::after {
-  content: "";
-
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 4px;
-  left: 0;
-  bottom: 0;
-  background-color: var(--text-color-accent);
-  border-radius: 2px;
-}
-
 /* Свойства навидений */
 .header .link:hover,
 .header .link:focus {
@@ -159,6 +157,23 @@ img {
 
 .header .link.current {
   color: var(--text-color-accent);
+}
+
+.menu-line {
+  position: relative;
+  display: block;
+  text-decoration: none;
+}
+
+.menu-line::after {
+  position: absolute;
+  content: " ";
+  width: 100%;
+  height: 4px;
+  left: 0;
+  bottom: -1px;
+  background-color: var(--text-color-accent);
+  border-radius: 2px;
 }
 
 /* Шапка. Основной экран */
@@ -177,10 +192,6 @@ img {
       rgba(47, 48, 58, 0.4)
     ),
     url(../images/Img-hero-2.jpg);
-
-  /* background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover; */
 }
 
 .hero-container {
@@ -219,6 +230,38 @@ img {
 
 .button:active {
   background: #188ce8;
+}
+
+/* Модальное окно */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(47, 48, 58, 0.6);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none; /* При таком классе не действуют ни какие события*/
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  min-height: 581px;
+  min-width: 528px;
+
+  padding: 40px;
+
+  background-color: #ffffff;
 }
 
 /* ********* Main ********* */
@@ -583,10 +626,15 @@ img {
   margin-top: 30px;
 }
 
+.card-link {
+  text-decoration: none;
+}
+
 /* Card */
 
 .card-content {
   padding: 20px 24px 20px 24px;
+  border: 1px solid #eeeeee;
 }
 
 .card-heading {
@@ -607,16 +655,60 @@ img {
   line-height: 1.88;
 }
 
-.card {
-  overflow: hidden;
-  border: 1px solid #eeeeee;
-}
 /* Тень карточки (сейчас необязательно) */
 
-.card-link {
-  text-decoration: none;
+.card {
+  overflow: hidden;
 }
+
+.card-thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-thumb::before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(33, 150, 243, 0.9);
+
+  transform: translateY(294px);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover .card-thumb::before {
+  transform: translateY(0);
+}
+
+.card-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+
+  font-size: 18px;
+  line-height: 1.56;
+  color: var(--text-color-head-footer);
+
+  transform: translateY(294px);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card:hover .card-label,
+.card:focus .card-label {
+  transform: translateY(0);
+  cursor: pointer;
+}
+
 .card:hover {
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
