@@ -251,7 +251,7 @@ img {
 }
 
 .backdrop.is-hidden {
-  opacity: 0;
+  opacity: 1;
   pointer-events: none; /* При таком классе не действуют ни какие события*/
 }
 
@@ -297,9 +297,73 @@ img {
   fill: currentColor;
 }
 
-.forma {
-  margin: 40px;
+/* Форма - Модальное окно */
+
+.form {
+  width: 448px;
+  outline: 1px solid tomato;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
 }
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+
+  /* outline: 2px solid blue; */
+  margin-bottom: 10px;
+}
+
+.form-field label {
+  margin-bottom: 5px;
+}
+
+.form-field input {
+  margin: 0;
+  padding: 6px 10px;
+  border-radius: 3px;
+  border: 1px solid var(--bg-color-head-footer);
+}
+
+.form-field input::placeholder {
+  color: rgb(219, 200, 200) 5;
+}
+
+.topic-policy {
+  /* width: 10px;
+  height: 10px; */
+}
+
+/* 
+
+
+
+
+
+
+
+*/
+
+/* Заголовок */
+
+.form-title {
+  margin-top: 2px;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  color: var(--text-color-primary);
+}
+
+/* .form-main {
+  margin: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+} */
 
 /* ********* Main ********* */
 

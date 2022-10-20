@@ -86,9 +86,34 @@
                     </svg>
                 </button>
 
-                <div class="forma">
-                    <form action="">Test</form>
-                </div>
+                <form class="form js-speaker-form" autocomplete="off">
+                    <div class="form-field">
+                        <label class="form-label" for="">Ім'я</label>
+                        <input class="form-input" type="text" name="user-name" placeholder="Ім'я">
+                    </div>
+                    <div class="form-field">
+                        <label class="form-label" for="">Ім'я</label>
+                        <input class="form-input" type="text" name="user-name" placeholder="Ім'я">
+                    </div>
+                    <div class="form-field">
+                        <label class="form-label" for="">Ім'я</label>
+                        <input class="form-input" type="text" name="user-name" placeholder="Ім'я">
+                    </div>
+                    <div class="form-field">
+                        <label class="form-label" for="">Ім'я</label>
+                        <input class="form-input" type="text" name="user-name" placeholder="Ім'я">
+                    </div>
+
+                    <input class="topic-policy" type="checkbox" name="policy" placeholder="Ім'я">
+                    <label class="" for="policy">Погоджуюся з розсилкою та приймаю Умови договору</label>
+
+                </form>
+
+                <!-- 
+
+Видео на 1:25:00
+
+ -->
 
 
             </div>
@@ -149,7 +174,6 @@
             </div>
         </section>
 
-
         <!-- Чим займаємось -->
         <section class="section">
             <div class="container">
@@ -174,7 +198,6 @@
 
             </div>
         </section>
-
 
         <!-- Наша команда -->
         <section class="section color-two">
@@ -504,11 +527,18 @@
     <script src="./modal.js"></script>
 
     <script>
-        const { height: pageHeaderHeight } = document
-            .querySelector(".header")
-            .getBoundingClientRect();
+        (() => {
+            document.querySelector('.js-speaker-form')
+                .addEventListener('submit', e => {
+                    e.preventDefault();
 
-        document.body.style.paddingTop = `${pageHeaderHeight}px`;
+                    new FormData(e.currentTarget).forEach((value, name) =>
+                        console.log(`${name}: ${value}`),
+                    );
+
+                    e.currentTarget.reset();
+                });
+        })();
     </script>
 
 </body>
