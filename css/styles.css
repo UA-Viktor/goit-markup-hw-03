@@ -233,7 +233,12 @@ img {
   background: #188ce8;
 }
 
-/* Модальное окно */
+/* Модальное окно 
+
+
+
+
+*/
 
 .backdrop {
   z-index: 9;
@@ -303,19 +308,10 @@ img {
 
 .form {
   width: 448px;
-  /* outline: 1px solid tomato; */
   margin: 40px;
   display: flexbox;
   flex-direction: column;
   align-items: center;
-}
-
-.form-field {
-  display: flex;
-  flex-direction: column;
-
-  /* outline: 2px solid blue; */
-  margin-bottom: 10px;
 }
 
 .form-title {
@@ -330,42 +326,84 @@ img {
   color: #212121;
 }
 
+.form-field {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
 .form-label {
   margin-bottom: 4px;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
-  /* line-height: 1.16px; */
   letter-spacing: 0.01em;
   color: var(--text-color-secondary);
 }
 
-.form-input {
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 4px;
-  padding: 11px 12px;
+.form-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
 }
 
-textarea {
+.form-area,
+.form-input {
+  outline: none;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding: 11px 12px 11px 42px;
+}
+
+.form-area {
   resize: none;
   height: 120px;
   padding: 12px 16px;
 }
 
+.form-field:focus-within > .form-icon {
+  fill: #2196f3;
+}
+
+.form-area:focus,
+.form-input:focus {
+  border: 1px solid #2196f3;
+}
+
 .topic-field {
+  margin-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  margin-top: 20px;
 }
 
-.topic-policy {
+/* .topic-policy {
   margin-right: 8px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+} */
+
+.topic-check {
+  width: 16px;
+  height: 15px;
+  display: inline-block;
+  background-color: tomato;
+  /* fill: #757575; */
+}
+
+.topic-policy:checked + .topic-check {
+  width: 16px;
+  height: 15px;
+  border-color: transparent;
+  background-image: url(../images/icon-check.svg);
+  background-size: contain;
+  background-origin: border-box;
 }
 
 .topic-input {
-  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -394,6 +432,13 @@ textarea {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border: 0;
   border-radius: 4px;
+}
+
+.form-button:focus {
+  outline: none;
+}
+
+.checkbox {
 }
 
 /* 
@@ -743,26 +788,31 @@ textarea {
 }
 
 .footer-connect-input {
+  width: 358px;
+  padding: 15px 16px;
+
+  color: var(--text-color-head-footer);
+  background-color: var(--bg-color-head-footer);
+
+  border-radius: 4px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
-  border-radius: 4px;
-  background-color: var(--bg-color-head-footer);
-  padding: 15px 16px;
-  color: var(--text-color-head-footer);
-  width: 358px;
 }
 
 .footer-connect-button {
+  padding: 10px 28px;
+
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.88;
+  letter-spacing: 0.06em;
+
   display: flex;
   align-items: center;
   text-align: center;
-  letter-spacing: 0.06em;
+
   color: #ffffff;
-  padding: 10px 28px;
   cursor: pointer;
   border: 0;
   background-color: var(--text-color-accent);
