@@ -87,25 +87,33 @@
                 </button>
 
                 <form class="form js-speaker-form" autocomplete="off">
+                    <h1 class="form-title">Залиште свої дані, ми вам передзвонимо</h1>
                     <div class="form-field">
-                        <label class="form-label" for="">Ім'я</label>
-                        <input class="form-input" type="text" name="user-name" placeholder="Ім'я">
+                        <label class="form-label" for="user-name">Ім'я</label>
+                        <input class="form-input" type="text" name="user-name">
+                        <!-- placeholder="Ім'я" -->
                     </div>
                     <div class="form-field">
-                        <label class="form-label" for="">Ім'я</label>
-                        <input class="form-input" type="text" name="user-name" placeholder="Ім'я">
+                        <label class="form-label" for="tel">Телефон</label>
+                        <input class="form-input" type="tel" name="tel">
                     </div>
                     <div class="form-field">
-                        <label class="form-label" for="">Ім'я</label>
-                        <input class="form-input" type="text" name="user-name" placeholder="Ім'я">
+                        <label class="form-label" for="email">Пошта</label>
+                        <input class="form-input" type="email" name="email">
                     </div>
                     <div class="form-field">
-                        <label class="form-label" for="">Ім'я</label>
-                        <input class="form-input" type="text" name="user-name" placeholder="Ім'я">
+                        <label class="form-label" for="area">Коментар</label>
+                        <textarea class="form-input" type="area" name="area" placeholder="Введіть текст"></textarea>
+                    </div>
+                    <div class="topic-field">
+                        <input class="topic-policy" type="checkbox" name="policy" id="policy">
+                        <label class="topic-input" for="policy">Погоджуюся з розсилкою та приймаю
+                            <span class="topic-contract">Умови
+                                договору</span></label>
                     </div>
 
-                    <input class="topic-policy" type="checkbox" name="policy" placeholder="Ім'я">
-                    <label class="" for="policy">Погоджуюся з розсилкою та приймаю Умови договору</label>
+                    <button type="submit" class="form-button">Відправити</button>
+
 
                 </form>
 
@@ -177,9 +185,8 @@
         <!-- Чим займаємось -->
         <section class="section">
             <div class="container">
-
-                <h2 class="work-title animate__infinite animate__animated animate__bounce animate__pulse">Чим ми
-                    займаємося</h2>
+                <!-- animate__infinite animate__animated animate__bounce animate__slideOutUp -->
+                <h2 class="work-title ">Чим ми займаємося</h2>
 
                 <ul class="work-list">
                     <li class="work-card">
@@ -516,6 +523,21 @@
                         </li>
                     </ul>
                 </div>
+
+                <div class="footer-connect">
+                    <h3 class="footer-connect-title">Підпишіться на розсилку</h3>
+                    <div class="footer-connect-group">
+                        <input class="footer-connect-input" type="text" placeholder="E-mail">
+                        <button class="footer-connect-button">Підписатися
+                            <svg class="footer-connect-icon" width="20" height="20">
+                                <use href="./images/symbol-defs.svg#icon-send">
+                                </use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+
             </div>
         </div>
     </footer>

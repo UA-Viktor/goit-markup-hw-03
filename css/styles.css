@@ -251,7 +251,7 @@ img {
 }
 
 .backdrop.is-hidden {
-  opacity: 1;
+  opacity: 0;
   pointer-events: none; /* При таком классе не действуют ни какие события*/
 }
 
@@ -266,7 +266,6 @@ img {
 
   min-height: 581px;
   min-width: 528px;
-  padding: 8px;
 
   background-color: #ffffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -278,6 +277,9 @@ img {
 }
 
 .button-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
   display: flex;
   margin-left: auto;
 
@@ -301,10 +303,11 @@ img {
 
 .form {
   width: 448px;
-  outline: 1px solid tomato;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 20px;
+  /* outline: 1px solid tomato; */
+  margin: 40px;
+  display: flexbox;
+  flex-direction: column;
+  align-items: center;
 }
 
 .form-field {
@@ -315,24 +318,82 @@ img {
   margin-bottom: 10px;
 }
 
-.form-field label {
-  margin-bottom: 5px;
+.form-title {
+  margin-bottom: 12px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+
+  color: #212121;
 }
 
-.form-field input {
-  margin: 0;
-  padding: 6px 10px;
-  border-radius: 3px;
-  border: 1px solid var(--bg-color-head-footer);
+.form-label {
+  margin-bottom: 4px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  /* line-height: 1.16px; */
+  letter-spacing: 0.01em;
+  color: var(--text-color-secondary);
 }
 
-.form-field input::placeholder {
-  color: rgb(219, 200, 200) 5;
+.form-input {
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding: 11px 12px;
+}
+
+textarea {
+  resize: none;
+  height: 120px;
+  padding: 12px 16px;
+}
+
+.topic-field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 20px;
 }
 
 .topic-policy {
-  /* width: 10px;
-  height: 10px; */
+  margin-right: 8px;
+}
+
+.topic-input {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  color: var(--text-color-secondary);
+}
+
+.topic-contract {
+  color: #2196f3;
+  text-decoration: underline;
+}
+
+.form-button {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  justify-content: center;
+
+  width: 200px;
+  padding: 10px 0;
+
+  color: var(--text-color-head-footer);
+  background: var(--text-color-accent);
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border: 0;
+  border-radius: 4px;
 }
 
 /* 
@@ -344,26 +405,6 @@ img {
 
 
 */
-
-/* Заголовок */
-
-.form-title {
-  margin-top: 2px;
-
-  font-style: normal;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 1.15;
-  text-align: center;
-  color: var(--text-color-primary);
-}
-
-/* .form-main {
-  margin: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-} */
 
 /* ********* Main ********* */
 
@@ -590,6 +631,7 @@ img {
 .footer-address {
   display: flex;
   flex-direction: column;
+  width: 231px;
 }
 
 .footer-logo {
@@ -676,6 +718,65 @@ img {
   fill: currentColor;
   color: var(--text-color-head-footer);
 }
+
+/* Підпишіться на розсилку
+
+*/
+
+.footer-connect {
+  margin-left: 93px;
+  margin-top: 12px;
+}
+
+.footer-connect-title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  color: var(--text-color-head-footer);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.footer-connect-group {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-connect-input {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  background-color: var(--bg-color-head-footer);
+  padding: 15px 16px;
+  color: var(--text-color-head-footer);
+  width: 358px;
+}
+
+.footer-connect-button {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+  padding: 10px 28px;
+  cursor: pointer;
+  border: 0;
+  background-color: var(--text-color-accent);
+  border-radius: 4px;
+}
+
+.footer-connect-icon {
+  margin-left: 10px;
+}
+
+/* 
+
+
+*/
 
 /* ******* Страница Портфолио ******* */
 
