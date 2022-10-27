@@ -1,0 +1,10 @@
+.header {
+    border-bottom: 1px solid #ececec;
+    background-color: var(--bg-color-portfolio);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    min-height: var(--header-h);
+    z-index: 10;
+}
